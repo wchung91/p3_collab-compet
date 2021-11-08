@@ -19,7 +19,7 @@ We use a docker with the nvidia driver and isolate the environment. Inside the d
 
    git clone https://github.com/wchung91/p3_collab-compet.git
 
-3.3 Build the dockerfile. Run the command below in the terminal and it will create an image named rl_env.
+3.3 Inside the downloaded repository, build the dockerfile. Run the command below in the terminal and it will create an image named rl_env_collab.
 
    sudo docker build . --rm -t rl_env_collab
 
@@ -27,7 +27,7 @@ If you use a different GPU from RTX 2080, you need to change the dockerfile. Ope
 
 3.4 Create a docker container from the docker image, but you need to change “/home/wally-server/Documents/p3_collab-compet” in the command below and then run the command. “/home/wally-server/Documents/p3_collab-compet” is the directory of the volume. You should change “/home/wally-server/Documents/p3_collab-compet” to the path to the cloned repository. That way the docker container has access to the files cloned from the repository. One you changed the command, run the command. 
 
-   sudo docker run -it -d --gpus all -v /home/wally-server/Documents/p3_collab-compet:/workspace --name p3_collab-compet_container rl_env_cont /bin/bash
+   sudo docker run -it -d --gpus all -v /home/wally-server/Documents/p3_collab-compet:/workspace --name p3_collab-compet_container rl_env_collab /bin/bash
 
 3.5 To access the container run,  
  
